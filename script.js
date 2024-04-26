@@ -13,7 +13,7 @@ document.getElementById("combinationForm").addEventListener("submit", function(e
     // Calcular o número total de combinações possíveis
     var totalComb = totalCombinations(n, m);
     var totalCombDiv = document.getElementById("totalCombinations");
-    totalCombDiv.textContent = "Número total de combinações possíveis: " + Math.round(totalComb).toLocaleString('en');
+    totalCombDiv.textContent = "Número total de combinações possíveis: " + formatNumberWithCommas(Math.round(totalComb));
 
     for (var i = 0; i < x; i++) {
         var randomCombination = getRandomCombination(elements, m);
@@ -44,4 +44,8 @@ function factorial(num) {
         num *= i;
     }
     return num;
+}
+
+function formatNumberWithCommas(number) {
+    return number.toLocaleString('en');
 }
