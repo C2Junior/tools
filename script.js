@@ -47,5 +47,5 @@ function factorial(num) {
 }
 
 function formatNumberWithCommas(number) {
-    return number.toLocaleString('en');
+    return number.toLocaleString('pt-br');
 }
