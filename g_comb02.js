@@ -89,5 +89,5 @@ function factorial(num) {
 }
 
 function formatNumberWithDots(number) {
-    return number.toLocaleString('en');
+    return number.toLocaleString('pt-br');
 }
