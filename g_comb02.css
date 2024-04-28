@@ -8,17 +8,17 @@ body {
 }
 
 .container {
-  width: 700px;
+  width: 90%; /* Largura ajustável em relação à largura da tela */
   margin: 50px auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #fff;
+  text-align: center; /* Centraliza o conteúdo */
 }
 
 h1 {
   text-align: center;
-/*  color: #333; */
 }
 
 form {
