@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Combinações Aleatórias</title>
+  <link rel="stylesheet" href="g_comb03.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gerador de Combinações Aleatórias</h1>
+    <form id="combinationForm">
+      <label for="elements">Elementos (informe um cojunto alfanumérico, separados por espaços):</label>
+      <input type="text" id="elements" name="elements" required>
+      <label for="m">Tamanho das combinações (m):</label>
+      <input type="number" id="m" name="m" min="1" required>
+      <label for="x">Número de combinações aleatórias (x):</label>
+      <input type="number" id="x" name="x" min="1" required>
+      <button type="submit">Gerar Combinações</button>
+    </form>
+    <div id="sortedElements"></div> <!-- Div para exibir o conjunto de elementos ordenado -->
+    <div id="output"></div>
+    <div id="totalCombinations"></div>
+  </div>
+
+  <script src="g_comb03.js"></script>
+</body>
+</html>

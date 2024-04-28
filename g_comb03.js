@@ -1,24 +1,30 @@
 document.getElementById("combinationForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    var n = parseInt(document.getElementById("n").value);
+    var elementsInput = document.getElementById("elements").value;
+    var elements = elementsInput.split(" ").filter(function(element) {
+        return element.trim() !== "";
+    }).sort(); // Ordenar o conjunto de elementos em ordem crescente
     var m = parseInt(document.getElementById("m").value);
     var x = parseInt(document.getElementById("x").value);
 
     var outputDiv = document.getElementById("output");
+    var sortedElementsDiv = document.getElementById("sortedElements"); // Div para exibir o conjunto de elementos ordenado
     outputDiv.innerHTML = "";
+    sortedElementsDiv.innerHTML = ""; // Limpar o conteúdo anterior
+
+    // Exibir o conjunto de elementos ordenado
+    var sortedElementsText = "Elementos fornecidos em ordem crescente: " + elements.join(", ");
+    sortedElementsDiv.textContent = sortedElementsText;
 
     // Verificar se o número de elementos é suficiente para gerar as combinações
-    if (n < m) {
+    if (elements.length < m) {
         outputDiv.textContent = "Erro: O número de elementos deve ser maior ou igual ao tamanho das combinações.";
         return;
     }
 
-    // Criar uma lista de elementos
-    var elements = Array.from({ length: n }, (_, i) => i + 1);
-
     // Calcular o número total de combinações possíveis
-    var totalComb = totalCombinations(n, m);
+    var totalComb = totalCombinations(elements.length, m);
     var totalCombDiv = document.getElementById("totalCombinations");
     totalCombDiv.textContent = "Número total de combinações possíveis: " + formatNumberWithDots(Math.round(totalComb));
 
@@ -30,14 +36,14 @@ document.getElementById("combinationForm").addEventListener("submit", function(e
 
     // Gerar combinações aleatórias distintas
     var combinationsCount = 0;
-    var generatedCombinations = [];
+    var generatedCombinations = new Set(); // Usar um conjunto para garantir combinações únicas
     while (combinationsCount < x) {
-        var randomCombination = getRandomCombination(elements, m).join(",");
-        if (!generatedCombinations.includes(randomCombination)) {
+        var randomCombination = getRandomCombination(elements, m).sort().join(","); // Ordenar a combinação gerada
+        if (!generatedCombinations.has(randomCombination)) {
             var p = document.createElement("p");
             p.textContent = "Combinação " + (combinationsCount + 1) + ": " + randomCombination;
             outputDiv.appendChild(p);
-            generatedCombinations.push(randomCombination);
+            generatedCombinations.add(randomCombination);
             combinationsCount++;
         }
     }
@@ -45,19 +51,19 @@ document.getElementById("combinationForm").addEventListener("submit", function(e
 
 function getRandomCombination(elements, m) {
     var shuffledElements = shuffleArray(elements);
-    return shuffledElements.slice(0, m).sort((a, b) => a - b);
+    return shuffledElements.slice(0, m);
 }
 
 function shuffleArray(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
-    // Enquanto ainda houver elementos para embaralhar
+    // Enquanto ainda houver elementos a serem embaralhados...
     while (0 !== currentIndex) {
-        // Escolher um elemento restante
+        // Selecionar um elemento restante...
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
 
-        // Trocar com o elemento atual
+        // E trocá-lo com o elemento atual.
         temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
@@ -67,16 +73,14 @@ function shuffleArray(array) {
 }
 
 function totalCombinations(n, m) {
-    // Calcular o número total de combinações possíveis
-    var numerator = factorial(n);
-    var denominator = factorial(m) * factorial(n - m);
-    return numerator / denominator;
+    // Calcular o coeficiente binomial (n escolha m)
+    return factorial(n) / (factorial(m) * factorial(n - m));
 }
 
 function factorial(num) {
-    if (num === 0 || num === 1) {
+    // Calcular o fatorial de um número
+    if (num === 0 || num === 1)
         return 1;
-    }
     for (var i = num - 1; i >= 1; i--) {
         num *= i;
     }
@@ -84,5 +88,6 @@ function factorial(num) {
 }
 
 function formatNumberWithDots(number) {
-    return number.toLocaleString('pt-br');
+    // Formatando um número com pontos para separar os milhares
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }

@@ -1,7 +1,8 @@
 window.onload = function() {
     var tools = [
         { name: "01. Gerador de Combinações Aleatórias - C(n,m)", url: "g_comb01.html" },
-        { name: "02. Gerador de Combinações Aleatórias - (informe um cojunto de números inteiros, separados por vírgula)", url: "g_comb02.html" }
+        { name: "02. Gerador de Combinações Aleatórias - (informe um conjunto de números inteiros, separados por vírgula)", url: "g_comb02.html" },
+        { name: "03. Gerador de Combinações Aleatórias - (informe um conjunto alfanumércio, separados por espaços)", url: "g_comb03.html" }
         // Adicione mais objetos conforme necessário para cada ferramenta
     ];
 
