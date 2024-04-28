@@ -8,7 +8,8 @@ body {
 }
 
 .container {
-  width: 700px;
+  width: 90%; /* Alterado para se ajustar à largura do dispositivo */
+  max-width: 600px; /* Definido um máximo para evitar que o conteúdo se estenda demais */
   margin: 50px auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -18,7 +19,7 @@ body {
 
 h1 {
   text-align: center;
-/*  color: #333; */
+  color: #333; /* Restaurado o estilo original */
 }
 
 form {
@@ -64,5 +65,11 @@ button:hover {
 
 #totalCombinations {
   margin-top: 10px;
+  color: #333;
+}
+
+/* Adicionados novos estilos para elementos ordenados */
+.sorted-elements {
+  margin-bottom: 10px;
   color: #333;
 }
