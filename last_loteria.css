@@ -1,0 +1,62 @@
+/* Estilos CSS para o HTML */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+button {
+    margin-top: 10px;
+    background-color: #007bff; /* Azul */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Efeito de alto relevo */
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+    transform: translateY(-2px); /* Deslocamento para cima ao passar o mouse */
+}
+
+button:active {
+    transform: translateY(0); /* Retorno à posição original quando clicado */
+}
+
+pre {
+    white-space: pre-wrap;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 100%;
+    overflow: auto;
+}

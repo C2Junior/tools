@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Último Resultado da Loteria</title>
+    <link rel="stylesheet" type="text/css" href="last_loteria.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Último Resultado da Loteria</h1>
+        <div class="centered">
+            <label for="loteria">Selecione a loteria:</label>
+            <select id="loteria">
+                <option value="DiadeSorte">Dia de Sorte</option>
+                <option value="DuplaSena">Dupla Sena</option>
+                <option value="Lotofacil">Lotofácil</option>
+                <option value="Lotomania">Lotomania</option>
+                <option value="Maismilionaria">Mais Milionária</option>
+                <option value="MegaSena" selected>Mega Sena</option>
+                <option value="Quina">Quina</option>
+                <option value="SuperSete">Super Sete</option>
+                <option value="TimeMania">Time Mania</option>
+            </select>
+            <button onclick="selecionarLoteria()">Exibir Resultado</button>
+        </div>
+        <pre id="resultado"></pre>
+    </div>
+    <script src="last_loteria.js"></script>
+</body>
+</html>
