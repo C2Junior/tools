@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Loteria</title>
+    <link rel="stylesheet" href="conc_loteria.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo">Resultado do Concurso</h1>
+        <div class="centralizado">
+            <label for="loteria">Selecione a loteria:</label>
+            <select id="loteria">
+                <option value="DiadeSorte">Dia de Sorte</option>
+                <option value="DuplaSena">Dupla Sena</option>
+                <option value="Lotofacil">Lotofácil</option>
+                <option value="Lotomania">Lotomania</option>
+                <option value="Maismilionaria">Mais Milionária</option>
+                <option value="MegaSena">Mega-Sena</option>
+                <option value="Quina">Quina</option>
+                <option value="SuperSete">Super Sete</option>
+                <option value="TimeMania">Time Mania</option>
+            </select>
+            <label for="concurso">Digite o número do concurso:</label>
+            <input type="text" id="concurso">
+            <button onclick="exibirResultado()">Exibir Resultado</button>
+        </div>
+        <div id="resultado"></div>
+    </div>
+    <script src="conc_loteria.js"></script>
+</body>
+</html>

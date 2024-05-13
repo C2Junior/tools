@@ -3,7 +3,8 @@ window.onload = function() {
         { name: "01. Gerador de Combinações Aleatórias - C(n,m)", url: "g_comb01.html" },
         { name: "02. Gerador de Combinações Aleatórias - (informe um conjunto de números inteiros, separados por vírgula)", url: "g_comb02.html" },
         { name: "03. Gerador de Combinações Aleatórias - (informe um conjunto alfanumércio, separados por espaços)", url: "g_comb03.html" },
-        { name: "04. Últimos Resultados das Loterias da CEF", url: "last_loteria.html" }
+        { name: "04. Últimos Resultados das Loterias da CEF", url: "last_loteria.html" },
+        { name: "05. Resultados dos Concursos das Loterias da CEF", url: "conc_loteria.html" }
         // Adicione mais objetos conforme necessário para cada ferramenta
     ];
 
